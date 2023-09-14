@@ -8,6 +8,7 @@ class UserController {
              const {n,e,ph,ps,cp} = req.body
              //security
              const user = await userModel.findOne({email:e})
+             console.log(user)
              if(user){
                 req.flash('error','Email already exit')
                 res.redirect('/registration')
